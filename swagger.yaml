@@ -1,11 +1,9 @@
 ---
 swagger: "2.0"
 info:
-  description: This is a simple API
+  description: Ecommerce api
   version: 1.0.0
-  title: Simple Inventory API
-  contact:
-    email: you@your-company.com
+  title: Ecommerce api
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
@@ -96,6 +94,7 @@ definitions:
     - id
     - images
     - name
+    - price
     - quantity
     - stock_status
     - thumb
@@ -119,6 +118,10 @@ definitions:
         type: integer
         format: int32
         example: 55
+      price:
+        type: number
+        format: double
+        example: 45.0
       stock_status:
         type: string
         example: in_stock | preorder | out_stock
@@ -140,6 +143,7 @@ definitions:
     - id
     - images
     - name
+    - price
     - quantity
     - stock_status
     - thumb
@@ -180,6 +184,10 @@ definitions:
         $ref: '#/definitions/variants'
       attributes:
         $ref: '#/definitions/attributes'
+      price:
+        type: number
+        format: double
+        example: 45.0
   brand:
     required:
     - description
